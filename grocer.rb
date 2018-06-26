@@ -24,7 +24,7 @@ def apply_coupons(cart, coupons)
               # values[:count] = 1
               # values[:price] = coupon[:cost] 
               
-              #values[:count] = values[:count] - coupons[:num]
+              values[:count] - coupons[:num]
               binding.pry
               if new_cart["#{key} W/COUPONS"]
                 new_cart["#{key} W/COUPONS"][:count] += 1
