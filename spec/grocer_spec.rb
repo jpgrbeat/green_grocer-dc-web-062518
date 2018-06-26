@@ -27,6 +27,7 @@ describe "Grocer" do
       cart = [find_item('TEMPEH'), find_item('PEANUTBUTTER'), find_item('ALMONDS')]
       result = consolidate_cart(cart)
       result.each do |item, attributes|
+        #binding.pry
         expect(attributes.keys).to include(:count)
         expect(attributes[:count]).to eq(1)
       end
@@ -37,6 +38,7 @@ describe "Grocer" do
       cart = [avocado, avocado, find_item('KALE')]
 
       result = consolidate_cart(cart)
+      #binding.pry
       expect(result["AVOCADO"][:price]).to eq(3.00)
       expect(result["AVOCADO"][:clearance]).to eq(true)
       expect(result["AVOCADO"][:count]).to eq(2)
